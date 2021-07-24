@@ -126,9 +126,27 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-    var lifeTotal = 0 {
+    var _lifeTotal: Int = 0 {
         didSet {
             updateLifeView(value: lifeTotal)
+        }
+    }
+    
+    var lifeTotal: Int {
+        get {
+            return self._lifeTotal
+        }
+        
+        set {
+            if newValue > 0 {
+                if newValue > 100 {
+                    
+                } else {
+                    self._lifeTotal = newValue
+                }
+            } else {
+                self._lifeTotal = 0
+            }
         }
     }
     
