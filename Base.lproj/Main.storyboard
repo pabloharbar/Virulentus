@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
+            <point key="canvasLocation" x="-219" y="65"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mcN-sa-9gp">
@@ -225,6 +225,7 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="dayButtonAction:" destination="tvd-zL-2q3" eventType="touchDragInside" id="7bq-Qg-hGV"/>
                                     <segue destination="5RE-cn-8Uf" kind="show" id="G0Q-tr-mXb"/>
                                 </connections>
                             </button>
@@ -235,74 +236,89 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lbV-Nz-8eA">
-                                <rect key="frame" x="32" y="127" width="350" height="350"/>
+                                <rect key="frame" x="57" y="127" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="348-ue-PBf"/>
-                                    <constraint firstAttribute="width" constant="350" id="CUu-mg-PzL"/>
+                                    <constraint firstAttribute="height" constant="300" id="348-ue-PBf"/>
+                                    <constraint firstAttribute="width" constant="300" id="CUu-mg-PzL"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swoosh..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71M-kO-eVv">
-                                <rect key="frame" x="157" y="492" width="100" height="29"/>
+                                <rect key="frame" x="157" y="442" width="100" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você acabou de ser aspirado para dentro da boca de João. Observa que " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRl-4u-Tm8">
-                                <rect key="frame" x="32" y="529" width="350" height="43"/>
+                                <rect key="frame" x="32" y="479" width="350" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b3Z-9R-aDM">
-                                <rect key="frame" x="32" y="625" width="350" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewLayout key="collectionViewLayout" id="Ipe-xL-i9A"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b3Z-9R-aDM">
+                                <rect key="frame" x="24" y="532" width="366" height="330"/>
+                                <color key="backgroundColor" name="DarkPurple"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="db3-H2-fZU">
+                                    <size key="itemSize" width="160" height="130"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="S2f-nC-ehH">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="S2f-nC-ehH" customClass="CollectionViewCell" customModule="Virulentus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2OO-rd-NLE">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7b-TO-jQd">
+                                                    <rect key="frame" x="5" y="12" width="150" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUj-sH-QrC">
+                                                    <rect key="frame" x="64.5" y="103.5" width="31" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="Purple"/>
+                                            <constraints>
+                                                <constraint firstItem="Q7b-TO-jQd" firstAttribute="top" secondItem="2OO-rd-NLE" secondAttribute="top" constant="12" id="8F7-tz-JkZ"/>
+                                                <constraint firstItem="Q7b-TO-jQd" firstAttribute="leading" secondItem="2OO-rd-NLE" secondAttribute="leading" constant="5" id="Nk5-qy-lSb"/>
+                                                <constraint firstAttribute="bottom" secondItem="JUj-sH-QrC" secondAttribute="bottom" constant="12" id="poM-5h-KpF"/>
+                                                <constraint firstItem="Q7b-TO-jQd" firstAttribute="centerX" secondItem="2OO-rd-NLE" secondAttribute="centerX" id="sC1-kq-4Vw"/>
+                                                <constraint firstItem="JUj-sH-QrC" firstAttribute="centerX" secondItem="2OO-rd-NLE" secondAttribute="centerX" id="tQW-vc-JEU"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xlm-sf-3Gt">
-                                        <rect key="frame" x="60" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lyd-9R-mSU">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JlK-lY-W6L">
-                                        <rect key="frame" x="120" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lMy-2e-0x9">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RV9-jo-H7y">
-                                        <rect key="frame" x="180" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nZQ-QR-cjC">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="160" height="130"/>
+                                        <connections>
+                                            <outlet property="cellContainer" destination="2OO-rd-NLE" id="49M-hR-EQT"/>
+                                            <outlet property="resultLabel" destination="JUj-sH-QrC" id="DIh-x3-8Zm"/>
+                                            <outlet property="titleLabel" destination="Q7b-TO-jQd" id="Yu2-T2-PnO"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="tvd-zL-2q3" id="ar1-MZ-lGG"/>
+                                    <outlet property="delegate" destination="tvd-zL-2q3" id="D12-c0-fH8"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7us-Ic-GhN"/>
                         <color key="backgroundColor" name="DarkPurple"/>
                         <constraints>
                             <constraint firstItem="ZRl-4u-Tm8" firstAttribute="leading" secondItem="WdQ-bH-woY" secondAttribute="leading" constant="32" id="0Xz-ad-2Lq"/>
+                            <constraint firstItem="b3Z-9R-aDM" firstAttribute="bottom" secondItem="7us-Ic-GhN" secondAttribute="bottom" id="0zd-zH-Uto"/>
                             <constraint firstItem="71M-kO-eVv" firstAttribute="top" secondItem="lbV-Nz-8eA" secondAttribute="bottom" constant="15" id="3gd-vD-s8B"/>
                             <constraint firstItem="b3Z-9R-aDM" firstAttribute="centerX" secondItem="WdQ-bH-woY" secondAttribute="centerX" id="BZJ-pN-LBJ"/>
                             <constraint firstItem="Hdv-Da-Lbg" firstAttribute="centerX" secondItem="WdQ-bH-woY" secondAttribute="centerX" id="CTG-HC-TEI"/>
                             <constraint firstItem="YeQ-c4-6kw" firstAttribute="leading" secondItem="ExR-GY-aQc" secondAttribute="trailing" constant="5" id="Ci3-B7-2EM"/>
                             <constraint firstItem="lbV-Nz-8eA" firstAttribute="centerX" secondItem="WdQ-bH-woY" secondAttribute="centerX" id="FqQ-TV-Y7L"/>
                             <constraint firstItem="71M-kO-eVv" firstAttribute="centerX" secondItem="WdQ-bH-woY" secondAttribute="centerX" id="H8A-mO-XeD"/>
+                            <constraint firstItem="b3Z-9R-aDM" firstAttribute="top" secondItem="ZRl-4u-Tm8" secondAttribute="bottom" constant="10" id="HmV-ar-K99"/>
                             <constraint firstItem="ZRl-4u-Tm8" firstAttribute="top" secondItem="71M-kO-eVv" secondAttribute="bottom" constant="8" id="IVw-OV-ITN"/>
                             <constraint firstItem="YeQ-c4-6kw" firstAttribute="centerY" secondItem="ExR-GY-aQc" secondAttribute="centerY" id="MZX-dg-6cY"/>
                             <constraint firstItem="ExR-GY-aQc" firstAttribute="centerY" secondItem="Hdv-Da-Lbg" secondAttribute="centerY" id="PQB-S6-QlK"/>
@@ -310,10 +326,9 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                             <constraint firstItem="ZRl-4u-Tm8" firstAttribute="centerX" secondItem="WdQ-bH-woY" secondAttribute="centerX" id="Xe9-ms-wX6"/>
                             <constraint firstItem="Hdv-Da-Lbg" firstAttribute="top" secondItem="7us-Ic-GhN" secondAttribute="top" constant="14" id="Xgj-ls-ndk"/>
                             <constraint firstItem="lbV-Nz-8eA" firstAttribute="top" secondItem="Hdv-Da-Lbg" secondAttribute="bottom" constant="24" id="Z3K-77-Ckh"/>
-                            <constraint firstItem="7us-Ic-GhN" firstAttribute="bottom" secondItem="b3Z-9R-aDM" secondAttribute="bottom" constant="24" id="ZPe-oW-i7A"/>
                             <constraint firstItem="Hdv-Da-Lbg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pNX-AD-LNU" secondAttribute="trailing" id="b1N-BH-ElC"/>
                             <constraint firstItem="7us-Ic-GhN" firstAttribute="trailing" secondItem="YeQ-c4-6kw" secondAttribute="trailing" constant="32" id="ktW-IM-h45"/>
-                            <constraint firstItem="b3Z-9R-aDM" firstAttribute="leading" secondItem="7us-Ic-GhN" secondAttribute="leading" constant="32" id="mgx-Z4-clm"/>
+                            <constraint firstItem="b3Z-9R-aDM" firstAttribute="leading" secondItem="7us-Ic-GhN" secondAttribute="leading" constant="24" id="mgx-Z4-clm"/>
                             <constraint firstItem="kiu-Uu-af6" firstAttribute="centerY" secondItem="Hdv-Da-Lbg" secondAttribute="centerY" id="pwo-6Q-8gk"/>
                             <constraint firstItem="kiu-Uu-af6" firstAttribute="leading" secondItem="7us-Ic-GhN" secondAttribute="leading" constant="32" id="xPi-HU-NkL"/>
                             <constraint firstItem="pNX-AD-LNU" firstAttribute="leading" secondItem="kiu-Uu-af6" secondAttribute="trailing" constant="5" id="zv4-Ld-54S"/>
@@ -334,19 +349,19 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
             </objects>
             <point key="canvasLocation" x="2065" y="88"/>
         </scene>
-        <!--View Controller-->
+        <!--Day View Controller-->
         <scene sceneID="MeG-zI-o0c">
             <objects>
-                <viewController id="5RE-cn-8Uf" sceneMemberID="viewController">
+                <viewController id="5RE-cn-8Uf" customClass="DayViewController" customModule="Virulentus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4vW-dF-zLr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLG-kp-9hQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="133.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="134"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dia 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbl-4Q-56s">
-                                        <rect key="frame" x="153.5" y="38" width="107.5" height="57.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dia 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbl-4Q-56s">
+                                        <rect key="frame" x="157.5" y="38" width="99.5" height="58"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -360,93 +375,96 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dano" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TI-Co-I6p">
-                                <rect key="frame" x="32" y="197.5" width="82.5" height="43"/>
+                                <rect key="frame" x="32" y="198" width="82.5" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de células infecciosas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ9-H0-Dlp">
-                                <rect key="frame" x="32" y="248.5" width="318.5" height="29"/>
+                                <rect key="frame" x="32" y="249" width="318.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="177" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfV-nL-udb">
-                                <rect key="frame" x="32" y="285.5" width="38" height="29"/>
+                                <rect key="frame" x="32" y="286" width="38" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="Green"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dano por célula infecciosa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yg-9M-0N6">
-                                <rect key="frame" x="32" y="322.5" width="276" height="29"/>
+                                <rect key="frame" x="32" y="323" width="276" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.1%/dia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11Q-AP-r1T">
-                                <rect key="frame" x="32" y="359.5" width="88" height="29"/>
+                                <rect key="frame" x="32" y="360" width="88" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="Green"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperação" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfi-wX-ydN">
-                                <rect key="frame" x="32" y="408.5" width="203.5" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dia Atual:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCF-QB-asF">
-                                <rect key="frame" x="32" y="459.5" width="98" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dano Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ng-l4-2ee">
+                                <rect key="frame" x="32" y="397" width="115.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UH-os-FSI">
-                                <rect key="frame" x="32" y="496.5" width="30" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17.7%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z99-65-01w">
+                                <rect key="frame" x="32" y="434" width="61" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" name="Red"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resposta Imunológica:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ng-l4-2ee">
-                                <rect key="frame" x="32" y="533.5" width="233.5" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IGG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z99-65-01w">
-                                <rect key="frame" x="32" y="570.5" width="40.5" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" name="Red"/>
+                                <color key="textColor" name="Green"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperação Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niq-dV-Dmc">
-                                <rect key="frame" x="32" y="607.5" width="197" height="29"/>
+                                <rect key="frame" x="32" y="603" width="197" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-5%/dia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSV-Jr-A9L">
-                                <rect key="frame" x="32" y="644.5" width="83" height="29"/>
+                                <rect key="frame" x="32" y="640" width="83" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNJ-bz-qv4">
-                                <rect key="frame" x="32" y="688.5" width="81.5" height="43"/>
+                                <rect key="frame" x="32" y="684" width="81.5" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="81" id="N9D-e1-lmh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.7%/dia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk5-ZT-1VF">
-                                <rect key="frame" x="123.5" y="688.5" width="151" height="43"/>
+                                <rect key="frame" x="123.5" y="684" width="151" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A resposta imunológica é mais forte a partir do Dia 7!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhi-Nk-jBO">
-                                <rect key="frame" x="32" y="746.5" width="350" height="57.5"/>
+                                <rect key="frame" x="32" y="742" width="350" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperação" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfi-wX-ydN">
+                                <rect key="frame" x="32" y="478" width="203.5" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dia Atual/Resposta Imunológica:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCF-QB-asF">
+                                <rect key="frame" x="32" y="529" width="333" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2/IGG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UH-os-FSI">
+                                <rect key="frame" x="32" y="566" width="77" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -463,24 +481,25 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                             <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8ng-l4-2ee" secondAttribute="trailing" id="4nP-eT-WcG"/>
                             <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kfi-wX-ydN" secondAttribute="trailing" id="8iS-nz-p0k"/>
                             <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iJ9-H0-Dlp" secondAttribute="trailing" id="9Mv-1f-3zy"/>
-                            <constraint firstItem="niq-dV-Dmc" firstAttribute="top" secondItem="Z99-65-01w" secondAttribute="bottom" constant="8" id="9U1-WA-DiW"/>
                             <constraint firstItem="4TI-Co-I6p" firstAttribute="top" secondItem="QLG-kp-9hQ" secondAttribute="bottom" constant="20" id="9pJ-ZV-dmT"/>
                             <constraint firstItem="iJ9-H0-Dlp" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="As4-xo-X2t"/>
                             <constraint firstItem="4Yg-9M-0N6" firstAttribute="top" secondItem="dfV-nL-udb" secondAttribute="bottom" constant="8" id="BcK-II-Vvw"/>
+                            <constraint firstItem="8ng-l4-2ee" firstAttribute="top" secondItem="11Q-AP-r1T" secondAttribute="bottom" constant="8" id="Bw7-CW-ohs"/>
                             <constraint firstItem="Kfi-wX-ydN" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="Cy6-VF-pNu"/>
+                            <constraint firstItem="Z99-65-01w" firstAttribute="top" secondItem="8ng-l4-2ee" secondAttribute="bottom" constant="8" id="DpX-gO-s2i"/>
                             <constraint firstItem="vk5-ZT-1VF" firstAttribute="leading" secondItem="dNJ-bz-qv4" secondAttribute="trailing" constant="10" id="GXI-BN-59G"/>
+                            <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vk5-ZT-1VF" secondAttribute="trailing" id="HK7-Ml-PTf"/>
                             <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fCF-QB-asF" secondAttribute="trailing" id="Jed-Id-N7E"/>
                             <constraint firstItem="nhi-Nk-jBO" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="Kwt-9T-3o7"/>
                             <constraint firstItem="TSV-Jr-A9L" firstAttribute="top" secondItem="niq-dV-Dmc" secondAttribute="bottom" constant="8" id="LC5-ER-2hc"/>
                             <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" secondItem="QLG-kp-9hQ" secondAttribute="trailing" id="LFw-Gs-iQT"/>
                             <constraint firstItem="4Yg-9M-0N6" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="MDO-sA-H7R"/>
-                            <constraint firstItem="dNJ-bz-qv4" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="Mm9-4V-tyh"/>
-                            <constraint firstItem="8ng-l4-2ee" firstAttribute="top" secondItem="5UH-os-FSI" secondAttribute="bottom" constant="8" id="MuS-WL-ImQ"/>
                             <constraint firstItem="11Q-AP-r1T" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="Rz2-kT-fwy"/>
+                            <constraint firstItem="Kfi-wX-ydN" firstAttribute="top" secondItem="Z99-65-01w" secondAttribute="bottom" constant="15" id="SoR-eN-JC3"/>
                             <constraint firstItem="fCF-QB-asF" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="T4X-bG-SVz"/>
-                            <constraint firstItem="Kfi-wX-ydN" firstAttribute="top" secondItem="11Q-AP-r1T" secondAttribute="bottom" constant="20" id="U2V-GD-2Z2"/>
                             <constraint firstItem="4TI-Co-I6p" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="VRu-qg-fzz"/>
                             <constraint firstItem="nhi-Nk-jBO" firstAttribute="top" secondItem="dNJ-bz-qv4" secondAttribute="bottom" constant="15" id="akS-Am-Qu1"/>
+                            <constraint firstItem="dNJ-bz-qv4" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="dtq-wH-TvL"/>
                             <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="11Q-AP-r1T" secondAttribute="trailing" id="e4Z-yV-ti7"/>
                             <constraint firstItem="11Q-AP-r1T" firstAttribute="top" secondItem="4Yg-9M-0N6" secondAttribute="bottom" constant="8" id="ePJ-Fu-JOn"/>
                             <constraint firstItem="iJ9-H0-Dlp" firstAttribute="top" secondItem="4TI-Co-I6p" secondAttribute="bottom" constant="8" id="fmW-3b-nN9"/>
@@ -498,10 +517,20 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                             <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dfV-nL-udb" secondAttribute="trailing" id="vP7-HH-Qlx"/>
                             <constraint firstItem="URz-Ui-xbr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4TI-Co-I6p" secondAttribute="trailing" id="vW4-WX-HMg"/>
                             <constraint firstItem="niq-dV-Dmc" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="xMB-pg-RyG"/>
+                            <constraint firstItem="niq-dV-Dmc" firstAttribute="top" secondItem="5UH-os-FSI" secondAttribute="bottom" constant="8" id="xtc-L6-f8l"/>
                             <constraint firstItem="TSV-Jr-A9L" firstAttribute="leading" secondItem="URz-Ui-xbr" secondAttribute="leading" constant="32" id="zS3-H4-PVD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="smN-8L-ftB"/>
+                    <connections>
+                        <outlet property="cellCountLabel" destination="dfV-nL-udb" id="AKx-AA-8rt"/>
+                        <outlet property="currentDayLabel" destination="5UH-os-FSI" id="1BY-le-OFd"/>
+                        <outlet property="damageCellLabel" destination="11Q-AP-r1T" id="Rq7-nn-D7Z"/>
+                        <outlet property="dayCountLabel" destination="Lbl-4Q-56s" id="QQ8-oY-ue6"/>
+                        <outlet property="totalDamageLabel" destination="Z99-65-01w" id="iHT-yW-HZ9"/>
+                        <outlet property="totalRateLabel" destination="vk5-ZT-1VF" id="rEa-kI-1Bv"/>
+                        <outlet property="totalRecoveryLabel" destination="TSV-Jr-A9L" id="FuU-eP-aEY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVw-pY-LDK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

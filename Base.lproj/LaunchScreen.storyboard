@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,10 +13,30 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="HomeCover" translatesAutoresizingMaskIntoConstraints="NO" id="fyC-4W-yqt">
+                                <rect key="frame" x="0.0" y="-2.5" width="414" height="901"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="jf8-yL-unv">
+                                <rect key="frame" x="17.5" y="204" width="379" height="74"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bigVirusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6de-Kn-WVD">
+                                <rect key="frame" x="120" y="343" width="178" height="169"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6de-Kn-WVD" secondAttribute="trailing" id="XbF-Mh-EBQ"/>
+                            <constraint firstItem="jf8-yL-unv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YHM-tr-wBY"/>
+                            <constraint firstItem="6de-Kn-WVD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="hrN-9J-3Xl"/>
+                            <constraint firstItem="jf8-yL-unv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="kki-bO-Y9n"/>
+                            <constraint firstItem="6de-Kn-WVD" firstAttribute="top" secondItem="jf8-yL-unv" secondAttribute="bottom" constant="65" id="mCz-TH-PME"/>
+                            <constraint firstItem="fyC-4W-yqt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nAP-WG-cUJ"/>
+                            <constraint firstItem="fyC-4W-yqt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="os3-oe-rBG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -22,4 +44,12 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HomeCover" width="414" height="901"/>
+        <image name="Title" width="379" height="74"/>
+        <image name="bigVirusIcon" width="178" height="169"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
