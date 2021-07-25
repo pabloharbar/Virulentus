@@ -20,7 +20,7 @@ class SceneBank {
                             Navigation(description: "Usar a ferida e entrar na corrente sanguínea", duration: 0.3, whereTo: .blood)
                         ],
                         attackOptions: [
-                            Attack(description: "Atacar a ferida exposta", duration: 1.2, damage: 10)],
+                            Attack(description: "Atacar a ferida exposta", duration: 0.8, damage: 100)],
                         replicateOptions: [
                             Replicate(description: "Replicar destruindo as células hospedeiras", duration: 1.2, cellGain: 10),
                             Replicate(description: "Replicar as células infecciosas", duration: 0.8, cellGain: 8)],

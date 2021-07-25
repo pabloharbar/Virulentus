@@ -14,7 +14,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Virulentus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Virulentus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,6 +348,76 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebm-fp-BWH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2065" y="88"/>
+        </scene>
+        <!--Ending View Controller-->
+        <scene sceneID="7MD-YA-CYr">
+            <objects>
+                <viewController storyboardIdentifier="endingViewController" modalPresentationStyle="fullScreen" id="nD2-Vx-D67" customClass="EndingViewController" customModule="Virulentus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rWA-9f-wTV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPA-pU-pKb">
+                                <rect key="frame" x="32" y="748" width="350" height="60"/>
+                                <color key="backgroundColor" name="Green"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fU7-gW-Nvl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Voltar ao início">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="cl0-uO-uNS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4f-wO-INC">
+                                <rect key="frame" x="139" y="144" width="136" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venceu!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lli-0f-cqM">
+                                <rect key="frame" x="97" y="257" width="220" height="76.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <color key="textColor" name="Green"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dia 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAY-bZ-0P3">
+                                <rect key="frame" x="112" y="443.5" width="190" height="80"/>
+                                <color key="backgroundColor" name="DarkPurple"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="L3d-1O-Uzt"/>
+                                    <constraint firstAttribute="width" constant="190" id="ble-hc-9UB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FfS-h4-V7R"/>
+                        <color key="backgroundColor" name="Purple"/>
+                        <constraints>
+                            <constraint firstItem="Lli-0f-cqM" firstAttribute="top" secondItem="G4f-wO-INC" secondAttribute="bottom" constant="36" id="5uj-kT-7SW"/>
+                            <constraint firstItem="oPA-pU-pKb" firstAttribute="centerX" secondItem="rWA-9f-wTV" secondAttribute="centerX" id="HKL-NX-Mmm"/>
+                            <constraint firstItem="oPA-pU-pKb" firstAttribute="leading" secondItem="FfS-h4-V7R" secondAttribute="leading" constant="32" id="RNj-Cj-Rwd"/>
+                            <constraint firstItem="G4f-wO-INC" firstAttribute="centerX" secondItem="rWA-9f-wTV" secondAttribute="centerX" id="Smj-35-kSh"/>
+                            <constraint firstItem="G4f-wO-INC" firstAttribute="top" secondItem="FfS-h4-V7R" secondAttribute="top" constant="100" id="Th0-Qd-bV1"/>
+                            <constraint firstItem="IAY-bZ-0P3" firstAttribute="centerX" secondItem="rWA-9f-wTV" secondAttribute="centerX" id="lZa-FK-872"/>
+                            <constraint firstItem="FfS-h4-V7R" firstAttribute="bottom" secondItem="oPA-pU-pKb" secondAttribute="bottom" constant="54" id="nZl-0J-NJ1"/>
+                            <constraint firstItem="Lli-0f-cqM" firstAttribute="centerX" secondItem="rWA-9f-wTV" secondAttribute="centerX" id="piA-WH-FRN"/>
+                            <constraint firstItem="IAY-bZ-0P3" firstAttribute="top" secondItem="Lli-0f-cqM" secondAttribute="bottom" constant="110" id="sc6-jZ-7zq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButto" destination="oPA-pU-pKb" id="OCg-5j-cOs"/>
+                        <outlet property="dayLabel" destination="IAY-bZ-0P3" id="CQ6-H4-lpl"/>
+                        <outlet property="endingTextLabel" destination="Lli-0f-cqM" id="166-xG-Bp8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SpN-ea-IPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180" y="865"/>
         </scene>
         <!--Day View Controller-->
         <scene sceneID="MeG-zI-o0c">

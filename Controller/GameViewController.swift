@@ -118,19 +118,25 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var currentDay = 0.0 {
         didSet {
-            updateDayView(Float(currentDay))
-            if (currentDay - Double(previousDay)) >= 1.0 {
-                previousDay = Int(currentDay)
-                lifeTotal += Int(Double(cellNumber) * damagePerCell) - (currentDay > 7 ? 25 : 5)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+                self.updateDayView(Float(currentDay))
+                if (self.currentDay - Double(self.previousDay)) >= 1.0{
+                    self.previousDay = Int(self.currentDay)
+                    self.lifeTotal += Int(Double(self.cellNumber) * self.damagePerCell) - (self.currentDay > 7 ? 25 : 5)
+                }
             }
         }
     }
+    
+    var result: ending = .win
     
     var _lifeTotal: Int = 0 {
         didSet {
             updateLifeView(value: lifeTotal)
         }
     }
+    
+    var hasEnded = false
     
     var lifeTotal: Int {
         get {
@@ -139,13 +145,24 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         set {
             if newValue > 0 {
-                if newValue > 100 {
-                    
+                if newValue >= 100 {
+                    result = .win
+                    let vc = self.storyboard!.instantiateViewController(withIdentifier: "endingViewController") as! EndingViewController
+                    self.show(vc, sender: self)
+                    vc.result = .win
+                    vc.dayCount = Int(self.currentDay)
+                    vc.viewDidLoad()
+                    hasEnded = true
                 } else {
                     self._lifeTotal = newValue
                 }
-            } else {
+            } else if !hasEnded {
+                result = .lost
                 self._lifeTotal = 0
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "endingViewController") as! EndingViewController
+                self.show(vc, sender: self)
+                vc.result = .lost
+                vc.dayCount = Int(self.currentDay)
             }
         }
     }
@@ -232,6 +249,10 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let vc = segue.destination as? DayViewController {
             vc.cellCount = self.cellNumber
             vc.currentDay = self.currentDay
+        }
+        if let vc = segue.destination as? EndingViewController {
+            vc.result = self.result
+            vc.dayCount = Int(self.currentDay)
         }
     }
 }
