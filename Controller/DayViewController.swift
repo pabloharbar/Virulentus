@@ -24,7 +24,7 @@ class DayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let totalDamage = damagePerCell * Double(cellCount)
-        let totalRecovery = currentDay < 7 ? -5.0 : -25.0
+        let totalRecovery = currentDay < 7 ? -5.0 : -15.0
         let totalRate = totalDamage + totalRecovery
         dayCountLabel.text = "Dia \(Int(currentDay))"
         cellCountLabel.text = "\(cellCount)"

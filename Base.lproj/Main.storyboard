@@ -258,17 +258,17 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                                 <rect key="frame" x="24" y="532" width="366" height="330"/>
                                 <color key="backgroundColor" name="DarkPurple"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="db3-H2-fZU">
-                                    <size key="itemSize" width="160" height="130"/>
+                                    <size key="itemSize" width="160" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="S2f-nC-ehH" customClass="CollectionViewCell" customModule="Virulentus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2OO-rd-NLE">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7b-TO-jQd">
@@ -278,7 +278,7 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUj-sH-QrC">
-                                                    <rect key="frame" x="64.5" y="103.5" width="31" height="14.5"/>
+                                                    <rect key="frame" x="64.5" y="83.5" width="31" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -293,7 +293,7 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                                                 <constraint firstItem="JUj-sH-QrC" firstAttribute="centerX" secondItem="2OO-rd-NLE" secondAttribute="centerX" id="tQW-vc-JEU"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="160" height="130"/>
+                                        <size key="customSize" width="160" height="110"/>
                                         <connections>
                                             <outlet property="cellContainer" destination="2OO-rd-NLE" id="49M-hR-EQT"/>
                                             <outlet property="resultLabel" destination="JUj-sH-QrC" id="DIh-x3-8Zm"/>
@@ -318,9 +318,9 @@ Busque uma forma de criar uma infecção e tome cuidado com o sistema imunológi
                             <constraint firstItem="YeQ-c4-6kw" firstAttribute="leading" secondItem="ExR-GY-aQc" secondAttribute="trailing" constant="5" id="Ci3-B7-2EM"/>
                             <constraint firstItem="lbV-Nz-8eA" firstAttribute="centerX" secondItem="WdQ-bH-woY" secondAttribute="centerX" id="FqQ-TV-Y7L"/>
                             <constraint firstItem="71M-kO-eVv" firstAttribute="centerX" secondItem="WdQ-bH-woY" secondAttribute="centerX" id="H8A-mO-XeD"/>
-                            <constraint firstItem="b3Z-9R-aDM" firstAttribute="top" secondItem="ZRl-4u-Tm8" secondAttribute="bottom" constant="10" id="HmV-ar-K99"/>
                             <constraint firstItem="ZRl-4u-Tm8" firstAttribute="top" secondItem="71M-kO-eVv" secondAttribute="bottom" constant="8" id="IVw-OV-ITN"/>
                             <constraint firstItem="YeQ-c4-6kw" firstAttribute="centerY" secondItem="ExR-GY-aQc" secondAttribute="centerY" id="MZX-dg-6cY"/>
+                            <constraint firstItem="b3Z-9R-aDM" firstAttribute="top" secondItem="ZRl-4u-Tm8" secondAttribute="bottom" constant="10" id="OF0-7z-AVs"/>
                             <constraint firstItem="ExR-GY-aQc" firstAttribute="centerY" secondItem="Hdv-Da-Lbg" secondAttribute="centerY" id="PQB-S6-QlK"/>
                             <constraint firstItem="pNX-AD-LNU" firstAttribute="centerY" secondItem="kiu-Uu-af6" secondAttribute="centerY" id="Qz9-Uv-1VC"/>
                             <constraint firstItem="ZRl-4u-Tm8" firstAttribute="centerX" secondItem="WdQ-bH-woY" secondAttribute="centerX" id="Xe9-ms-wX6"/>

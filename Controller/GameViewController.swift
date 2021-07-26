@@ -34,17 +34,17 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         case .attack:
             resultLabel = "+\(action.value)%      "
             resultLabel += action.duration > 1 ? "\(action.duration) dias" : "\(action.duration) dia"
-            cell.cellContainer.backgroundColor = UIColor.white
-            cell.titleLabel.textColor = .black
-            cell.resultLabel.textColor = .black
+//            cell.cellContainer.backgroundColor = UIColor.white
+//            cell.titleLabel.textColor = .black
+//            cell.resultLabel.textColor = .black
         case .navigation:
             resultLabel = action.duration > 1 ? "\(action.duration) dias" : "\(action.duration) dia"
         case .replicate:
             resultLabel = "+\(action.value) células  "
             resultLabel += action.duration > 1 ? "\(action.duration) dias" : "\(action.duration) dia"
-            cell.cellContainer.backgroundColor = UIColor(named: "Green")
-            cell.titleLabel.textColor = .black
-            cell.resultLabel.textColor = .black
+//            cell.cellContainer.backgroundColor = UIColor(named: "Green")
+//            cell.titleLabel.textColor = .black
+//            cell.resultLabel.textColor = .black
         }
         
         cell.resultLabel.text = resultLabel
@@ -100,6 +100,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var currentOrgan: Organ = SceneBank.instance.mouth {
         didSet {
             updateOrgan(currentOrgan)
+            //
         }
     }
     
@@ -122,7 +123,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.updateDayView(Float(currentDay))
                 if (self.currentDay - Double(self.previousDay)) >= 1.0{
                     self.previousDay = Int(self.currentDay)
-                    self.lifeTotal += Int(Double(self.cellNumber) * self.damagePerCell) - (self.currentDay > 7 ? 25 : 5)
+                    self.lifeTotal += Int(Double(self.cellNumber) * self.damagePerCell) - (self.currentDay >= 8 ? 15 : 5)
                 }
             }
         }
@@ -177,6 +178,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         lifeCount.text = "\(lifeTotal)%"
         currentImage.image = currentOrgan.sceneImage
         currentActions = updateActions(currentOrgan)
+        sceneTitle.text = currentOrgan.title
+        sceneDescription.text = currentOrgan.description
     }
     
     func updateCellView(value: Int) {
@@ -190,54 +193,67 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func updateOrgan(_ organ: Organ) {
         currentImage.image = currentOrgan.sceneImage
         currentActions = updateActions(currentOrgan)
+        sceneTitle.text = currentOrgan.title
+        sceneDescription.text = currentOrgan.description
     }
     
     func updateActions(_ organ: Organ) -> [ActionModel] {
         var sortedActions: [ActionModel] = []
         
-        let sortNavigation = Int.random(in: 0..<organ.navigationOptions.count)
-        let sortAttack = Int.random(in: 0..<organ.attackOptions.count)
-        let sortReplicate = Int.random(in: 0..<organ.replicateOptions.count)
-        
-        var possibleExtra: [Int] = []
-        
-        if organ.navigationOptions.count > 1 {
-            possibleExtra.append(1)
+        if organ.organ != .blood {
+         
+            let sortNavigation = Int.random(in: 0..<organ.navigationOptions.count)
+            let sortAttack = Int.random(in: 0..<organ.attackOptions.count)
+            let sortReplicate = Int.random(in: 0..<organ.replicateOptions.count)
+            
+            var possibleExtra: [Int] = []
+            
+            if organ.navigationOptions.count > 1 {
+                possibleExtra.append(1)
+            }
+            if organ.attackOptions.count > 1 {
+                possibleExtra.append(2)
+            }
+            if organ.replicateOptions.count > 1 {
+                possibleExtra.append(3)
+            }
+            let sortExtra = possibleExtra.randomElement()
+            
+            sortedActions.append(organ.navigationOptions[sortNavigation])
+            sortedActions.append(organ.attackOptions[sortAttack])
+            sortedActions.append(organ.replicateOptions[sortReplicate])
+            
+            switch sortExtra {
+                case 1:
+                    var newSort = Int.random(in: 0..<organ.navigationOptions.count - 1)
+                    if newSort >= sortNavigation {
+                        newSort += 1
+                    }
+                    sortedActions.append(organ.navigationOptions[newSort])
+                case 2:
+                    var newSort = Int.random(in: 0..<organ.attackOptions.count - 1)
+                    if newSort >= sortAttack {
+                        newSort += 1
+                    }
+                    sortedActions.append(organ.attackOptions[newSort])
+                case 3:
+                    var newSort = Int.random(in: 0..<organ.replicateOptions.count - 1)
+                    if newSort >= sortReplicate {
+                        newSort += 1
+                    }
+                    sortedActions.append(organ.replicateOptions[newSort])
+                default:
+                    break
+            }
+        } else {
+            var remainingOptions = organ.navigationOptions
+            for _ in 0...3 {
+                let sortNumber = Int.random(in: 0..<remainingOptions.count)
+                sortedActions.append(remainingOptions[sortNumber])
+                remainingOptions.remove(at: sortNumber)
+            }
         }
-        if organ.attackOptions.count > 1 {
-            possibleExtra.append(2)
-        }
-        if organ.replicateOptions.count > 1 {
-            possibleExtra.append(3)
-        }
-        let sortExtra = possibleExtra.randomElement()
         
-        sortedActions.append(organ.navigationOptions[sortNavigation])
-        sortedActions.append(organ.attackOptions[sortAttack])
-        sortedActions.append(organ.replicateOptions[sortReplicate])
-        
-        switch sortExtra {
-            case 1:
-                var newSort = Int.random(in: 0..<organ.navigationOptions.count - 1)
-                if newSort >= sortNavigation {
-                    newSort += 1
-                }
-                sortedActions.append(organ.navigationOptions[newSort])
-            case 2:
-                var newSort = Int.random(in: 0..<organ.attackOptions.count - 1)
-                if newSort >= sortAttack {
-                    newSort += 1
-                }
-                sortedActions.append(organ.attackOptions[newSort])
-            case 3:
-                var newSort = Int.random(in: 0..<organ.replicateOptions.count - 1)
-                if newSort >= sortReplicate {
-                    newSort += 1
-                }
-                sortedActions.append(organ.replicateOptions[newSort])
-            default:
-                break
-        }
         return sortedActions
     }
     
